@@ -112,12 +112,19 @@ class Question {
 const question1 = new Question(
   "How many stars are in the American flag?",
   ["50","35","100","55"],
-  "50"
+  "50",
+
 );
+const question2 = new Question(
+  "How many hearts does an octopus have?",
+  ["1","0","3","8"],
+  "3"
+)
 
 
 const userAnswer = "35";
 console.log(question1.checkAnswer(userAnswer));
+
 
 
 // Create a Quiz class with the following properties: 
@@ -153,3 +160,10 @@ class Quiz {
       this.nextQuestion();
     }
   }
+
+  const quiz = new Quiz();
+  quiz.addQuestion(question1);
+  quiz.addQuestion(question2);
+  quiz.submitAnswer("50");
+  quiz.submitAnswer("8");
+  console.log("Score:", quiz.score);
